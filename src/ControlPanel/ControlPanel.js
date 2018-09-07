@@ -44,12 +44,15 @@ class ControlPanel extends Component {
     render() {
         const { params, classes } = this.props;
         const { values } = this.state;
-        return <div className={classes.root}>
+        return <div className="" >
 
 
             {params.map((param, i) =>
-                <div className="slider-container" key={i}>
-                    <Slider vertical onChange={(e, v) => this.handleChange(e, v, i)} value={values[i]} />
+                <div className="slider-container" className={classes.root} key={i}>
+                    <Slider
+                        vertical
+                        onChange={(e, v) => this.handleChange(e, v, i)}
+                        value={values[i]} />
                     < Typography id={param.label}> {param.label}</Typography>
                 </div>
             )}
